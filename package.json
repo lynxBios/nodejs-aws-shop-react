@@ -12,7 +12,10 @@
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
     "cdk": "cdk",
-    "deploy": "npm run cdk deploy"
+    "deploy": "npm run cdk deploy",
+    "bootstrap": "npm run cdk bootstrap",
+    "synth": "npm run cdk synth",
+    "destroy": "npm run cdk destroy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
