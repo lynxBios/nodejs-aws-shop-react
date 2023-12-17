@@ -5,11 +5,17 @@ import { useQuery, useQueryClient, useMutation } from "react-query";
 import React from "react";
 
 export function useAvailableProducts() {
+  const token = localStorage.getItem("get-products-token");
   return useQuery<AvailableProduct[], AxiosError>(
     "available-products",
     async () => {
       const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.product}/products`
+        `${API_PATHS.product}/products`,
+        {
+          headers: {
+            Authorization: `${token}`,
+          },
+        }
       );
       return res.data;
     }
